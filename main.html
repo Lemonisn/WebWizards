@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Web Wizards - Home</title>
+    <title>Main Interface - Web Wizards</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/auth.js" defer></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +12,7 @@
             text-align: center;
             padding: 50px;
         }
-        .container {
+        .main-container {
             background: white;
             padding: 20px;
             border-radius: 10px;
@@ -19,7 +20,7 @@
             max-width: 600px;
             margin: auto;
         }
-        .buttons a {
+        .nav-buttons a {
             display: inline-block;
             margin: 10px;
             padding: 10px 20px;
@@ -28,22 +29,24 @@
             text-decoration: none;
             border-radius: 5px;
         }
-        .buttons a:hover {
+        .nav-buttons a:hover {
             background: #005fa3;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Web Wizards!</h1>
-        <p>A social networking hub for your class community. Connect, share, and engage.</p>
+    <div class="main-container">
+        <h2 id="welcomeMessage">Welcome</h2>
+        <p>Navigate your Web Wizards hub:</p>
         
-        <div class="buttons">
-            <a href="signup.html">Sign Up</a>
-            <a href="login.html">Login</a>
-            <a href="directory.html">Member Directory</a>
+        <div class="nav-buttons">
+            <a href="friends.html">Friends</a>
+            <a href="messaging.html">Messages</a>
             <a href="events.html">Events</a>
+            <a href="profile.html">Profile</a>
         </div>
+
+        <button id="logoutBtn">Logout</button>
     </div>
 </body>
 </html>
