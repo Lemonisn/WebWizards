@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friends - Web Wizards</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        .friends-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        .friend-list {
+            list-style: none;
+            padding: 0;
+        }
+        .friend-item {
+            padding: 10px;
+            background: #f9f9f9;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .add-friend-btn {
+            background: #0077cc;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-friend-btn:hover {
+            background: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <div class="friends-container">
+        <h2>Friends List</h2>
+        <ul id="friendList" class="friend-list">
+            <li class="friend-item">Alice <button class="add-friend-btn">Remove</button></li>
+            <li class="friend-item">Bob <button class="add-friend-btn">Remove</button></li>
+        </ul>
+
+        <h3>Find Friends</h3>
+        <ul id="suggestedFriends" class="friend-list">
+            <li class="friend-item">Charlie <button class="add-friend-btn">Add Friend</button></li>
+            <li class="friend-item">David <button class="add-friend-btn">Add Friend</button></li>
+        </ul>
+    </div>
+
+    <script>
+        document.querySelectorAll(".add-friend-btn").forEach(button => {
+            button.addEventListener("click", function() {
+                this.textContent = this.textContent === "Add Friend" ? "Remove" : "Add Friend";
+            });
+        });
+    </script>
+</body>
+</html>
