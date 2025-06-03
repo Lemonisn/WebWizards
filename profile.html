@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>User Profile - Web Wizards</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/auth.js" defer></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,4 +44,17 @@
     </style>
 </head>
 <body>
-    <div class="profile
+    <div class="profile-container">
+        <h2 id="welcomeMessage">Welcome</h2>
+        <img src="assets/images/profile-placeholder.png" alt="Profile Picture">
+        
+        <form id="profileForm">
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="department" placeholder="Department">
+            <input type="email" id="contact" placeholder="Contact Email">
+            <button type="submit">Save Changes</button>
+        </form>
+        <button id="logoutBtn">Logout</button>
+    </div>
+</body>
+</html>
