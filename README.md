@@ -1,4 +1,19 @@
 # WebWizards
+
+## Branches
+
+| Branch       | Description           | Link                                                                 |
+|--------------|----------------------|----------------------------------------------------------------------|
+| main         | Main production code | [main](https://github.com/Lemonisn/WebWizards/tree/main)             |
+| dev          | Development branch   | [dev](https://github.com/Lemonisn/WebWizards/tree/dev)               |
+| feature-x    | Feature X branch     | [feature-x](https://github.com/Lemonisn/WebWizards/tree/feature-x)   |
+
+<!-- You can add more branches as needed -->
+
+<!-- Optional: add branch badges if CI or status badges exist -->
+
+---
+
 WebWizards/
 │── index.html          # Home page
 │── signup.html         # Signup page
