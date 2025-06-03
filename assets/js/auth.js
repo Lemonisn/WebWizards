@@ -16,3 +16,21 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     alert("Signup successful! Redirecting...");
     window.location.href = "login.html";
 });
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form reload
+
+    const username = document.getElementById("loginUsername").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    if (!username || !password) {
+        alert("Please enter both username and password.");
+        return;
+    }
+
+    // Simulated login (Replace with real authentication logic)
+    sessionStorage.setItem("user", username);
+
+    alert("Login successful! Redirecting...");
+    window.location.href = "profile.html"; // Redirect after login
+});
