@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Directory - Web Wizards</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        .directory-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        .search-box {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .member-list {
+            list-style: none;
+            padding: 0;
+        }
+        .member-item {
+            padding: 10px;
+            background: #f9f9f9;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="directory-container">
+        <h2>Member Directory</h2>
+        <input type="text" id="searchBox" class="search-box" placeholder="Search members...">
+        
+        <ul id="memberList" class="member-list">
+            <li class="member-item">Alice - Computer Science</li>
+            <li class="member-item">Bob - Mathematics</li>
+            <li class="member-item">Charlie - Physics</li>
+            <li class="member-item">David - Engineering</li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById("searchBox").addEventListener("input", function() {
+            let filter = this.value.toLowerCase();
+            let members = document.querySelectorAll(".member-item");
+
+            members.forEach(member => {
+                if (member.textContent.toLowerCase().includes(filter)) {
+                    member.style.display = "block";
+                } else {
+                    member.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
