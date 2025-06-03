@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messaging - Web Wizards</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        .chat-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+        .message-box {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .send-btn {
+            background: #0077cc;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .send-btn:hover {
+            background: #005fa3;
+        }
+        .chat-log {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Messaging</h2>
+        <div class="chat-log" id="chatLog">
+            <p><b>Alice:</b> Hey there!</p>
+            <p><b>Bob:</b> Hi! How's it going?</p>
+        </div>
+        <input type="text" id="messageInput" class="message-box" placeholder="Type your message...">
+        <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let message = document.getElementById("messageInput").value.trim();
+            if (message) {
+                let chatLog = document.getElementById("chatLog");
+                let newMessage = document.createElement("p");
+                newMessage.innerHTML = `<b>You:</b> ${message}`;
+                chatLog.appendChild(newMessage);
+                document.getElementById("messageInput").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
