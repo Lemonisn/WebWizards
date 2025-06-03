@@ -1,3 +1,18 @@
+# WebWizards
+
+## Branches
+
+| Branch    | Description           | Link                                                               |
+|-----------|----------------------|--------------------------------------------------------------------|
+| main      | Main production code | [main](https://github.com/Lemonisn/WebWizards/tree/main)           |
+| dev       | Development branch   | [dev](https://github.com/Lemonisn/WebWizards/tree/dev)             |
+| feature-x | Feature X branch     | [feature-x](https://github.com/Lemonisn/WebWizards/tree/feature-x) |
+
+---
+
+## Project Structure
+
+```plaintext
 WebWizards/
 │── index.html          # Home page
 │── signup.html         # Signup page
