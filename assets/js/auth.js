@@ -1,4 +1,19 @@
-document.getElementById("signupForm").addEventListener("submit", function(event) {
+document.addEventListener("DOMContentLoaded", function () {
+    const user = sessionStorage.getItem("user");
+
+    // Redirect to login if user isn't logged in
+    if (window.location.pathname.includes("profile.html") && !user) {
+        window.location.href = "login.html";
+    }
+
+    // Display welcome message if user is logged in
+    if (user && document.getElementById("welcomeMessage")) {
+        document.getElementById("welcomeMessage").innerText = `Welcome, ${user}`;
+    }
+});
+
+// Signup form handling
+document.getElementById("signupForm")?.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const username = document.getElementById("username").value.trim();
@@ -6,19 +21,19 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     const password = document.getElementById("password").value;
 
     if (username.length < 3 || password.length < 6) {
-        alert("Ensure username is at least 3 characters and password is 6 characters.");
+        alert("Username must be at least 3 characters and password at least 6 characters.");
         return;
     }
 
-    // Storing user session (For demo purposes, use actual database in production)
-    sessionStorage.setItem("user", JSON.stringify({ username, email }));
-
+    // Store user session (For demo purposes, use actual database in production)
+    sessionStorage.setItem("user", username);
     alert("Signup successful! Redirecting...");
-    window.location.href = "login.html";
+    window.location.href = "profile.html";
 });
 
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form reload
+// Login form handling
+document.getElementById("loginForm")?.addEventListener("submit", function (event) {
+    event.preventDefault();
 
     const username = document.getElementById("loginUsername").value.trim();
     const password = document.getElementById("loginPassword").value;
@@ -28,9 +43,15 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         return;
     }
 
-    // Simulated login (Replace with real authentication logic)
+    // Store login session
     sessionStorage.setItem("user", username);
+    alert("Login successful!");
+    window.location.href = "profile.html";
+});
 
-    alert("Login successful! Redirecting...");
-    window.location.href = "profile.html"; // Redirect after login
+// Logout function
+document.getElementById("logoutBtn")?.addEventListener("click", function () {
+    sessionStorage.removeItem("user");
+    alert("Logged out!");
+    window.location.href = "index.html";
 });
