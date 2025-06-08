@@ -1,18 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
     const user = sessionStorage.getItem("user");
+    const urlParams = new URLSearchParams(window.location.search);
+    const friendName = urlParams.get("user"); // Get friend's profile from URL
 
     // Redirect to login if user isn't logged in
-    if (window.location.pathname.includes("profile.html") && !user) {
+    if (!user && window.location.pathname.includes("profile.html")) {
         window.location.href = "login.html";
     }
 
-    // Display welcome message if user is logged in
-    if (user && document.getElementById("welcomeMessage")) {
-        document.getElementById("welcomeMessage").innerText = `Welcome, ${user}`;
+    // Display profile dynamically
+    if (document.getElementById("profileHeader")) {
+        document.getElementById("profileHeader").innerText = friendName ? `${friendName}'s Profile` : `${user}'s Profile`;
     }
 
-    // Restore saved profile data
-    if (document.getElementById("profileForm")) {
+    // Restore saved profile data for self
+    if (!friendName && document.getElementById("profileForm")) {
         document.getElementById("name").value = sessionStorage.getItem("name") || "";
         document.getElementById("department").value = sessionStorage.getItem("department") || "";
         document.getElementById("contact").value = sessionStorage.getItem("contact") || "";
@@ -32,7 +34,6 @@ document.getElementById("signupForm")?.addEventListener("submit", function (even
         return;
     }
 
-    // Store user session (For demo purposes, use actual database in production)
     sessionStorage.setItem("user", username);
     alert("Signup successful! Redirecting...");
     window.location.href = "login.html";
@@ -50,7 +51,6 @@ document.getElementById("loginForm")?.addEventListener("submit", function (event
         return;
     }
 
-    // Store login session
     sessionStorage.setItem("user", username);
     alert("Login successful!");
     window.location.href = "profile.html";
@@ -72,13 +72,29 @@ document.getElementById("profileForm")?.addEventListener("submit", function (eve
     window.location.href = "main.html";
 });
 
+// Messaging button handling
+document.getElementById("messageBtn")?.addEventListener("click", function () {
+    const friendName = new URLSearchParams(window.location.search).get("user");
+    window.location.href = friendName ? `messaging.html?user=${friendName}` : "messaging.html";
+});
+
 // Logout function
 document.getElementById("logoutBtn")?.addEventListener("click", function () {
-    sessionStorage.removeItem("user");
-    sessionStorage.removeItem("name");
-    sessionStorage.removeItem("department");
-    sessionStorage.removeItem("contact");
-
+    sessionStorage.clear(); // Clears all stored user data
     alert("Logged out!");
     window.location.href = "index.html";
+});
+
+document.getElementById("homeBtn")?.addEventListener("click", function () {
+    window.location.href = "main.html";
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const homeBtn = document.getElementById("homeBtn");
+
+    if (homeBtn) {
+        homeBtn.addEventListener("click", function () {
+            window.location.href = "main.html";
+        });
+    }
 });

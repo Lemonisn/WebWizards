@@ -1,20 +1,34 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     background: #f0f0f0;
     text-align: center;
     padding: 50px;
+    margin: 0;
 }
 
-.container {
+/* Container Styling */
+.container, .signup-container, .login-container, .profile-container {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 600px;
+    max-width: 400px;
     margin: auto;
 }
 
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
 button {
+    width: 100%;
     background: #0077cc;
     color: white;
     padding: 10px;
@@ -27,11 +41,64 @@ button:hover {
     background: #005fa3;
 }
 
-input, textarea {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
+/* Navigation Links */
+.nav-buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background: #0077cc;
+    color: white;
+    text-decoration: none;
     border-radius: 5px;
-    border: 1px solid #ccc;
 }
 
+.nav-buttons a:hover {
+    background: #005fa3;
+}
+
+/* Profile Image */
+.profile-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+}
+
+/* Logout Button - Top Right */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #0077cc;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: auto; /* Prevent it from stretching */
+    display: inline-block;
+}
+
+.logout-btn:hover {
+    background: #005fa3;
+}
+
+.home-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #0077cc;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+}
+
+.home-btn:hover {
+    background: #005fa3;
+}
