@@ -4,16 +4,68 @@
     <meta charset="UTF-8">
     <title>Signup - WebWizards</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+
+    
 </head>
 <body>
     <div class="signup-container">
         <h2>Join WebWizards</h2>
-        <form id="signupForm" method="POST">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Sign Up</button>
-        </form>
+        <form id="signupForm">
+  <label for="username">Username:</label>
+  <input type="text" name="username" id="username"><br>
+
+  <label for="email">Email:</label>
+  <input type="text" name="email" id="email"><br>
+
+  <label for="password">Password:</label>
+  <input type="password" name="password" id="password" required><br>
+
+  <button type="submit">Sign Up</button>
+</form>
+        
+    <script>
+        $(document).ready(function () {
+ Form").validate({
+    rules: {
+      username: {
+        required: true,
+        minlength: 3
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      password: {
+        required: true,
+        minlength: 6
+      }
+    },
+    messages: {
+      username: {
+        required: "Please enter your username",
+        minlength: "Username must be at least 3 characters long"
+      },
+      email: {
+        required: "Please enter your email",
+        email: "Please enter a valid email address"
+      },
+      password: {
+        required: "Please provide a password",
+        minlength: "Password must be at least 6 characters long"
+      }
+    },
+    submitHandler: function (form) {
+      alert("Form submitted successfully!");
+      form.submit(); // or use AJAX here
+    }
+  });
+});
+    </script>
+        
+
+
     </div>
     <script src="assets/js/auth.js"></script>
 </body>
