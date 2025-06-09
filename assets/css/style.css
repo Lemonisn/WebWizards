@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background: #f0f0f0;
+    background: #000000;
     text-align: center;
     padding: 50px;
     margin: 0;
@@ -13,13 +13,13 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 600px;
+    max-width: 400px;
     margin: auto;
 }
 
 /* Input Fields */
 input {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
