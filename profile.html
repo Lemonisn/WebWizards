@@ -54,8 +54,14 @@
             <input type="text" id="name" placeholder="Name">
             <input type="text" id="department" placeholder="Department">
             <input type="email" id="contact" placeholder="Contact Email">
+            
             <button type="submit">Save Changes</button>
         </form>
+        <form action="/upload-picture" method="post" enctype="multipart/form-data">
+  <label for="picture">Select Picture:</label>
+  <input type="file" id="picture" name="picture" accept="image/*">
+  <button type="submit">Upload</button>
+</form>
         <button id="logoutBtn">Logout</button>
     </div>
 </body>
