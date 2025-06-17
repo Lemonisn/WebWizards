@@ -5,25 +5,30 @@ body {
     text-align: center;
     padding: 50px;
     margin: 0;
+    font-size: 24px; /* Increased font size */
 }
 
-/* Container Styling */
+/* Centering Containers */
 .container, .signup-container, .login-container, .profile-container {
     background: white;
-    padding: 20px;
+    padding: 40px; /* Increased padding */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 400px;
-    margin: auto;
+    max-width: 800px; /* Doubled the width */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Full centering */
 }
 
 /* Input Fields */
 input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 20px; /* Increased padding */
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    font-size: 20px; /* Larger text */
 }
 
 /* Buttons */
@@ -31,10 +36,11 @@ button {
     width: 100%;
     background: #0077cc;
     color: white;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 20px; /* Larger button */
+    border-radius: 10px;
     border: none;
     cursor: pointer;
+    font-size: 22px; /* Increased font size */
 }
 
 button:hover {
@@ -44,12 +50,13 @@ button:hover {
 /* Navigation Links */
 .nav-buttons a {
     display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
+    margin: 20px;
+    padding: 20px 40px;
     background: #0077cc;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 22px; /* Increased font */
 }
 
 .nav-buttons a:hover {
@@ -58,8 +65,8 @@ button:hover {
 
 /* Profile Image */
 .profile-container img {
-    width: 100px;
-    height: 100px;
+    width: 200px; /* Doubled the size */
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
@@ -67,38 +74,36 @@ button:hover {
 }
 
 /* Logout Button - Top Right */
-.logout-btn {
+.logout-btn, .home-btn {
     position: absolute;
     top: 20px;
-    right: 20px;
-    background: #0077cc;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    width: auto; /* Prevent it from stretching */
-    display: inline-block;
+    padding: 12px 20px; /* Larger buttons */
+    border-radius: 10px;
+    font-size: 20px;
+    width: auto;
 }
 
-.logout-btn:hover {
-    background: #005fa3;
+.logout-btn {
+    right: 20px;
 }
 
 .home-btn {
-    position: absolute;
-    top: 20px;
     left: 20px;
-    background: #0077cc;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    width: auto;
-    display: inline-block;
 }
 
-.home-btn:hover {
+/* Join Button */
+.join-btn {
+    background: #0077cc;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px; /* Larger text */
+    min-width: 120px; /* Ensure consistent size */
+    text-align: center;
+}
+
+.join-btn:hover {
     background: #005fa3;
 }

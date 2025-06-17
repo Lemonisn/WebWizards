@@ -30,13 +30,20 @@
             justify-content: space-between;
             align-items: center;
         }
+        .event-name {
+            flex-grow: 1;
+        }
         .join-btn {
             background: #0077cc;
             color: white;
-            padding: 5px 10px;
+            padding: 10px 15px;
             border-radius: 5px;
             border: none;
             cursor: pointer;
+            font-size: 14px;
+            min-width: 100px;
+            text-align: center;
+            margin-left: auto;
         }
         .join-btn:hover {
             background: #005fa3;
@@ -49,16 +56,21 @@
     <div class="events-container">
         <h2>Upcoming Events</h2>
         <ul id="eventList">
-            <li class="event-item">Study Group - April 10 <button class="join-btn">Join</button></li>
-            <li class="event-item">Code Workshop - April 15 <button class="join-btn">Join</button></li>
+            <li class="event-item">
+                <span class="event-name">Study Group - April 10</span>
+                <button class="join-btn">Join</button>
+            </li>
+            <li class="event-item">
+                <span class="event-name">Code Workshop - April 15</span>
+                <button class="join-btn">Join</button>
+            </li>
         </ul>
     </div>
 
     <script>
         document.querySelectorAll(".join-btn").forEach(button => {
             button.addEventListener("click", function() {
-                this.textContent = "Joined!";
-                this.disabled = true;
+                this.textContent = this.textContent === "Join" ? "Joined!" : "Join";
             });
         });
     </script>

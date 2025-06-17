@@ -10,29 +10,45 @@
             font-family: Arial, sans-serif;
             background: #f0f0f0;
             text-align: center;
-            padding: 50px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .profile-container {
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 400px;
-            margin: auto;
+            width: 350px; /* Reduced container size */
+            text-align: center;
         }
         .profile-container img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
+            display: block;
+            margin: 0 auto 15px;
         }
-        .profile-container input, .profile-container button {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
+        .profile-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Ensuring input fields are centered */
+        }
+        .profile-container input {
+            width: 90%; /* Reduced input width */
+            margin: 8px 0;
+            padding: 8px;
             border-radius: 5px;
+            font-size: 16px;
         }
         .profile-container button {
+            width: 90%;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
             background: #0077cc;
             color: white;
             border: none;
@@ -58,11 +74,10 @@
             <button type="submit">Save Changes</button>
         </form>
         <form action="/upload-picture" method="post" enctype="multipart/form-data">
-  <label for="picture">Select Picture:</label>
-  <input type="file" id="picture" name="picture" accept="image/*">
-  <button type="submit">Upload</button>
-</form>
-        <button id="logoutBtn">Logout</button>
+            <label for="picture">Select Picture:</label>
+            <input type="file" id="picture" name="picture" accept="image/*">
+            <button type="submit">Upload</button>
+        </form>
     </div>
 </body>
 </html>
